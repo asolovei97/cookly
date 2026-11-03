@@ -9,7 +9,7 @@
 | # | Пункт | Що входить |
 |---|---|---|
 | B1 | [Бутстрап](plans/01-backend-bootstrap/index.md) | Монорепо, Go-скелет, конфіг, формат помилок, Docker Compose (PostgreSQL, Redis, Garage), goose + sqlc, OpenAPI-контракт і кодогенерація, `GET /v1/ping`, CI. **Спостережуваність**: структуровані логи з `request_id`, відновлення після panic, `/metrics`, трасування (OpenTelemetry), відправка помилок у крашлітику; локальний профіль Compose з Grafana-стеком |
-| B2 | Авторизація застосунку | Apple, Google, email OTP, сесії, refresh, пристрої, ліміти, див. [автентифікацію](accounts/auth.md) |
+| B2 | [Авторизація застосунку](plans/02-app-auth/index.md) | Apple, Google, сесії, refresh, пристрої, ліміти, див. [автентифікацію](accounts/auth.md) |
 | B3 | Авторизація адмінки | Адмін-акаунти, TOTP, ролі, аудит, див. [адмінку](admin.md) |
 | B4 | Переклади | JSONB-поля, `ui_strings`, версії пакетів, див. [переклади](i18n.md) |
 | B5 | Сім'я | Персони, ролі, коди запрошення, цілі й норми, див. [акаунти й сім'ю](accounts/index.md) |
