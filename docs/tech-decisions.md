@@ -52,6 +52,10 @@ docs/       — ця документація
 - Garage замість MinIO: для MinIO більше немає офіційного Docker-образу.
 - OpenAPI-first: один контракт для трьох застосунків і перевірка відповідності на рівні генерації.
 
+## Деталі
+
+Деталі бекенду (роутер, помилки, спостережуваність, черга River, pnpm workspaces) — у [плані бутстрапу](plans/01-backend-bootstrap/index.md).
+
 ## Open questions
 
 - Хостинг і середовища (staging, production).
