@@ -7,7 +7,7 @@
 | Що | Розмір | Файли |
 |---|---|---|
 | **Посуд**: `plate`, `bowl`, `glass`, `board`, `jar` | 32×32 | `vessel-<key>.png` + `vessel-<key>-fill.png` |
-| **Топінги за категоріями** — по одному на кожну з 22 [категорій інгредієнтів](../06-catalog/directories.md#категорії) | 8×8 | `topping-cat-<category>.png` |
+| **Топінги категорій** — для 10 вузлів верхнього рівня [дерева](../06-catalog/categories.md#початкове-дерево) і важливих підвузлів: `dairy`, `eggs`, `poultry`, `fish`, `crustaceans`, `gluten-grains`, `gluten-free-grains`, `legumes`, `tree-nuts`, `sauces`, `alcohol`. Решта вузлів успадковує спрайт предка | 8×8 | `topping-cat-<key>.png` |
 | **Конкретні топінги**: `egg`, `greens`, `tomato`, `cucumber`, `carrot`, `onion`, `potato`, `beet`, `meat`, `chicken`, `fish`, `cheese`, `mushroom`, `lemon`, `berries` | 8×8 | `topping-<sprite_key>.png` |
 | **Фони** | 32×32 | `bg-1.png` … `bg-4.png` |
 
@@ -29,7 +29,7 @@
   "version": 3,
   "vessels": { "bowl": { "file": "vessel-bowl.png", "fill": "vessel-bowl-fill.png" } },
   "toppings": { "egg": { "file": "topping-egg.png", "anchor": [4, 7] } },
-  "categoryToppings": { "ovochi": "topping-cat-ovochi.png" },
+  "categoryToppings": { "produce": "topping-cat-produce.png" },
   "backgrounds": ["bg-1.png", "bg-2.png", "bg-3.png", "bg-4.png"]
 }
 ```

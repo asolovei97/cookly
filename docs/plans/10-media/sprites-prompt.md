@@ -26,10 +26,10 @@
    - Топінги 8×8 для конкретних інгредієнтів: egg, greens, tomato,
      cucumber, carrot, onion, potato, beet, meat, chicken, fish, cheese,
      mushroom, lemon, berries → topping-<key>.png.
-   - Топінги 8×8 для категорій: m-yaso, ptytsia, ryba, yaitsia, molochni,
-     syry, krupy, makarony, boroshno, khlib, ovochi, frukty, zelen,
-     bobovi, horikhy, olii, sousy, spetsii, solodoshchi, napoi,
-     zamorozhene, hotovi-stravy → topping-cat-<key>.png.
+   - Топінги 8×8 для категорій: milk-eggs, meat, seafood, produce,
+     grocery, bakery, sweets-snacks, frozen, ready-meals, drinks, dairy,
+     eggs, poultry, fish, crustaceans, gluten-grains, gluten-free-grains,
+     legumes, tree-nuts, sauces, alcohol → topping-cat-<key>.png.
    - Фони 32×32: bg-1 … bg-4 — спокійні текстури (скатертина, дерево,
      плитка, однотон) з малою кількістю кольорів, щоб не відволікали від
      страви.
@@ -57,4 +57,4 @@
 1. Поклади результат у `backend/internal/pixelart/sprites/`.
 2. Переглянь контактний аркуш і `pixelart sheet` з реальними рецептами.
 3. Доправ спрайти в Pixelorama, збільш `version` у маніфесті.
-4. Ключі категорій у маніфесті мають відповідати ключам категорій у каталозі; якщо вони відрізняються, онови маніфест.
+4. Ключі категорій у маніфесті — це `key` вузлів [дерева категорій](../06-catalog/categories.md#початкове-дерево).
