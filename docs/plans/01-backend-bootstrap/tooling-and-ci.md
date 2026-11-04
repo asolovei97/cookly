@@ -25,7 +25,7 @@
 
 - Юніт-тести і API-тести через `httptest` + згенерований клієнт на справжніх PostgreSQL і Redis.
 - Інфраструктура тестів — **testcontainers-go**: тести самодостатні і однаково запускаються локально й у CI.
-- Кожен AC з [юзер-сторі](user-stories.md) покривається тестом `TestAC_<US>_<N>_...`, наприклад `TestAC_BOOT_1_1_PingWithoutToken`.
+- Кожен AC з [юзер-сторі](user-stories/index.md) покривається тестом `TestAC_<US>_<N>_...`, наприклад `TestAC_BOOT_1_1_PingWithoutToken`.
 
 ## Docker-образ
 
@@ -39,7 +39,7 @@
 | Job | Перевіряє |
 |---|---|
 | `backend` | golangci-lint, тести |
-| `contracts` | Redocly lint, збирання контракту |
+| `contracts` | Redocly lint, збирання контракту, `oasdiff` проти контракту попереднього релізу: несумісні зміни в `/v1` → помилка |
 | `codegen` | Після `make gen` немає змін у git |
 | `image` | Збирання Docker-образу (без пушу) |
 
