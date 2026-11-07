@@ -55,7 +55,7 @@
 
 ## Історія
 
-- Кожна зміна пишеться в журнал: хто, коли, на скільки, чому (`purchase`, `cooking`, `consumption` — [облік з'їденого](../17-nutrition-log/from-plan.md#запаси), `manual`, `onboarding`, `discrepancy`).
+- Кожна зміна пишеться в журнал: хто, коли, на скільки, чому (`purchase`, `cooking`, `consumption` — [облік з'їденого](../17-nutrition-log/from-plan.md#запаси), `manual`, `writeoff` — [списання з причиною](usage.md#списання-з-причиною), `onboarding`, `discrepancy`).
 - Зберігається **90 днів**, далі видаляється задачею воркера.
 
 ## Права
