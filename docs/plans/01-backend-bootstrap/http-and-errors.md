@@ -50,6 +50,8 @@
 | Немає або невалідний access-токен | 401 | `auth.unauthorized` |
 | Необроблена помилка або panic | 500 | `internal.error` |
 | Версія застосунку нижча за мінімальну | 426 | `app.upgrade_required` |
+| Фіча вимкнена ([B20](../20-feature-flags/enforcement.md#коди)) | 403 | `feature.disabled` |
+| Версія нижча за мінімальну версію фічі ([B20](../20-feature-flags/enforcement.md#коди)) | 426 | `feature.upgrade_required` |
 
 ## Безпека за замовчуванням
 
