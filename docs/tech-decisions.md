@@ -27,7 +27,9 @@ docs/       — ця документація
 
 ## Мобільний застосунок
 
-- **React Native + Expo** (dev builds).
+- **React Native + Expo** (dev builds), **Expo Router**, TypeScript strict.
+- **TanStack Query** з persist-кешем у MMKV, **Zustand**, **FormatJS**, власні примітиви на токенах, **react-hook-form + zod** зі схем OpenAPI.
+- Тести — Jest, RNTL, **Maestro**; варіанти `development`, `testing`, `staging`, `production`, див. [план M1](plans/m01-mobile-bootstrap/index.md).
 - **Офлайн-сховище** — ~~expo-sqlite або WatermelonDB~~ → **expo-sqlite + Drizzle ORM**, бо синхронізуємо журнал доменних операцій, а не рядки таблиць.
 - **OTA-оновлення** — **EAS Update**, `runtimeVersion` за fingerprint, канали `staging` і `production`, див. [фіча-прапорці й версії](feature-flags.md#ota-оновлення).
 - **UX** — принципи й чекліст у [UX мобільного застосунку](mobile-ux.md).
