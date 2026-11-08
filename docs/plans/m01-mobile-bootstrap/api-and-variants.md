@@ -8,7 +8,7 @@
 
 | Що | Як |
 |---|---|
-| Заголовки | `X-App-Platform`, `X-App-Version`, `X-Request-ID` (генерує клієнт), `Accept-Language` |
+| Заголовки | `X-App-Platform`, `X-App-Version` (логічна версія, [M10](../m10-flags-and-ota/ota.md#версії)), `X-App-Native-Version`, `X-Request-ID` (генерує клієнт), `Accept-Language` |
 | Помилки | `application/problem+json` → текст з `ui_strings` за ключем `error.<code>`, інакше `error.generic` ([B4](../04-i18n/ui-strings.md#модель)) |
 | Помилки полів | `errors[]` → поля форми ([стек](stack.md#форми)) |
 | `426 app.upgrade_required` | Глобальний **екран оновлення** з посиланням у стор; `minVersion` з відповіді ([B1](../01-backend-bootstrap/http-and-errors.md#мінімальна-версія-застосунку)) |
