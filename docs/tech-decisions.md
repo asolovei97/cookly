@@ -32,6 +32,7 @@ docs/       — ця документація
 - Тести — Jest, RNTL, **Maestro**; варіанти `development`, `testing`, `staging`, `production`, див. [план M1](plans/m01-mobile-bootstrap/index.md).
 - **Офлайн-сховище** — ~~expo-sqlite або WatermelonDB~~ → **expo-sqlite + Drizzle ORM**, бо синхронізуємо журнал доменних операцій, а не рядки таблиць.
 - **OTA-оновлення** — **EAS Update**, `runtimeVersion` за fingerprint, канали `staging` і `production`, див. [фіча-прапорці й версії](feature-flags.md#ota-оновлення).
+- **Сцени кухні** — **`@shopify/react-native-skia`** за описом із сервера, з легким режимом без Skia, див. [план M2](plans/m02-sign-in-and-onboarding/kitchen-scenes.md).
 - **UX** — принципи й чекліст у [UX мобільного застосунку](mobile-ux.md).
 
 ## Адмінка
