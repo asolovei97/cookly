@@ -62,7 +62,7 @@
 | M1 | [Бутстрап](plans/m01-mobile-bootstrap/index.md) (Expo Router, TanStack Query, FormatJS, примітиви, варіанти, Maestro, крашлітика) | B1 |
 | M2 | [Вхід і онбординг](plans/m02-sign-in-and-onboarding/index.md): сім'я, персони, сцени обладнання й запасів, легкий режим, налаштування | B2, B5, B6, B13, B19, B25 |
 | M3 | [Каталог і пошук](plans/m03-catalog-and-search/index.md): навігація, `CatalogPicker`, сканер, картка, створення, ціна | B6, B7, B8 |
-| M4 | Рецепти | B9, B10 |
+| M4 | [Рецепти](plans/m04-recipes/index.md): пошук, сторінка, редактор, обкладинка, публікація | B9, B10, B11, B13, B24 |
 | M5 | План меню | B12 |
 | M6 | Закупка офлайн | B14, B15 |
 | M7 | Готування офлайн | B14, B16 |
