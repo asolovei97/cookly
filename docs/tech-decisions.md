@@ -1,0 +1,69 @@
+# Технічні рішення
+
+Стек і наскрізні технічні рішення для трьох застосунків.
+
+## Монорепо
+
+```
+backend/    — Go: API і воркер
+mobile/     — React Native (Expo)
+admin/      — React (Vite)
+contracts/  — OpenAPI-контракт
+docs/       — ця документація
+```
+
+## Контракт API
+
+- **OpenAPI-first**: контракт у `contracts/` — джерело правди.
+- З контракту генеруються Go-сервер (oapi-codegen) і TypeScript-клієнти для мобільного застосунку й адмінки.
+
+## Бекенд
+
+- **Go**, **PostgreSQL**, **Redis**.
+- Міграції — **goose**, запити — **sqlc**.
+- **Воркер** — окремий бінарник у тому ж Go-модулі: фонові задачі (прев'ю фото, піксельні картинки, кеш цін, анонімізація видалених акаунтів, адаптери [чеків](receipts.md), згодом сповіщення й парсери).
+- **Фіча-прапорці** — власні: таблиця з правилами, кеш у Redis, `x-feature` в OpenAPI і middleware, див. [фіча-прапорці й версії](feature-flags.md).
+- **Сховище файлів** — **Garage** (S3-сумісне), завантаження за presigned URL, див. [фото](recipes/media.md).
+
+## Мобільний застосунок
+
+- **React Native + Expo** (dev builds), **Expo Router**, TypeScript strict.
+- **TanStack Query** з persist-кешем у MMKV, **Zustand**, **FormatJS**, власні примітиви на токенах, **react-hook-form + zod** зі схем OpenAPI.
+- Тести — Jest, RNTL, **Maestro**; варіанти `development`, `testing`, `staging`, `production`, див. [план M1](plans/m01-mobile-bootstrap/index.md).
+- **Офлайн-сховище** — ~~expo-sqlite або WatermelonDB~~ → **expo-sqlite + Drizzle ORM**, бо синхронізуємо журнал доменних операцій, а не рядки таблиць.
+- **OTA-оновлення** — **EAS Update**, `runtimeVersion` за fingerprint, канали `staging` і `production`, див. [фіча-прапорці й версії](feature-flags.md#ota-оновлення).
+- **Сцени кухні** — **`@shopify/react-native-skia`** за описом із сервера, з легким режимом без Skia, див. [план M2](plans/m02-sign-in-and-onboarding/kitchen-scenes.md).
+- **UX** — принципи й чекліст у [UX мобільного застосунку](mobile-ux.md).
+
+## Адмінка
+
+- **React + Vite + TanStack Query**.
+
+## Офлайн
+
+- [Закупка](shopping.md) і [готування](cooking.md) працюють **офлайн-first**: локальна чернетка і синхронізація **ідемпотентними операціями** — журнал доменних команд, `POST /v1/sync/ops` і `GET /v1/sync/changes`, див. [план B14](plans/14-offline-sync/index.md).
+- Решта застосунку може вимагати мережу.
+
+## Переклади
+
+- JSONB-поля з мовою як ключем, таблиця рядків інтерфейсу з версією пакета, див. [переклади](i18n.md).
+
+## Інфраструктура
+
+- Локально — **Docker Compose** (PostgreSQL, Redis, Garage).
+- CI — **GitHub Actions**.
+
+## Рішення
+
+- Garage замість MinIO: для MinIO більше немає офіційного Docker-образу.
+- OpenAPI-first: один контракт для трьох застосунків і перевірка відповідності на рівні генерації.
+- Власні фіча-прапорці замість Unleash чи GrowthBook: керування в нашій адмінці з ролями й аудитом, без зайвої інфраструктури.
+- LLM — користувача, через діплінк: жодних витрат на інференс і ключів, див. [LLM-асистент](llm-assistant.md).
+
+## Деталі
+
+Деталі бекенду (роутер, помилки, спостережуваність, черга River, pnpm workspaces) — у [плані бутстрапу](plans/01-backend-bootstrap/index.md).
+
+## Open questions
+
+- Хостинг і середовища (staging, production).
